@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# lo-de-report-web
 
-## Getting Started
+Web app Next.js + TypeScript để OCR ảnh cược lô đề, cho người dùng sửa text, tính kết quả và xuất report PNG. App chạy client-side, không dùng backend, database hay API route cho OCR.
 
-First, run the development server:
+## Cài đặt
+
+```bash
+npm install
+```
+
+## Chạy dev
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Mở `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Kiểm tra
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-## Learn More
+## Deploy Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push repository lên GitHub/GitLab/Bitbucket.
+2. Vào Vercel, chọn **New Project** và import repository.
+3. Giữ cấu hình mặc định cho Next.js.
+4. Build command: `npm run build`.
+5. Deploy.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ghi chú kỹ thuật
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- OCR dùng `tesseract.js` chạy trong browser.
+- Xuất PNG dùng `html-to-image` với `toPng`.
+- Dữ liệu tạm tự lưu trong `localStorage`.
+- JSON import/export chỉ lưu danh sách các lần đánh.
