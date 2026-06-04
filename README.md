@@ -99,6 +99,16 @@ Lưu ý:
 - Đề chỉ xét giải đặc biệt `DB`.
 - Lô xét toàn bộ số 2 chữ số trong tất cả các giải.
 
+Bạn cũng có thể OCR ảnh kết quả xổ số chụp full màn hình điện thoại:
+
+- Bấm **Chọn/chụp KQXS** trong khu vực **Ảnh kết quả xổ số**.
+- App tự crop vùng giữa ảnh để bỏ thanh trình duyệt, header web, quảng cáo và thanh điều hướng.
+- Kiểm tra **Ảnh gốc** và **Vùng crop OCR** trước khi đọc.
+- Nếu vùng crop sai, bấm **Crop lại thủ công**, kéo chọn vùng bảng kết quả từ ĐB đến G7 rồi bấm **Áp dụng crop**.
+- Bấm **Đọc KQXS** để OCR vùng crop.
+- App chuẩn hóa kết quả về đúng dạng `DB/G1/G2...G7` và đưa vào textarea **Kết quả xổ số**.
+- Nếu OCR nhận thừa hoặc thiếu số, app sẽ cảnh báo. Hãy kiểm tra và sửa text trước khi bấm **Tính toán**.
+
 ### 6. Tính toán
 
 Bấm **Tính toán** sau khi đã nhập cược và kết quả.

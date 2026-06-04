@@ -6,6 +6,16 @@ export type BetRound = {
   betText: string;
   resultText: string;
   imageDataUrl?: string;
+  resultImageDataUrl?: string;
+  resultCropDataUrl?: string;
+  resultCropRect?: CropRect;
+};
+
+export type CropRect = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
 };
 
 export type NumberPoint = {

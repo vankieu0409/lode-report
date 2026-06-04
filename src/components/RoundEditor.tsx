@@ -3,6 +3,7 @@
 import { formatMoney } from "@/lib/format";
 import { BetRound, RoundCalculationResult } from "@/types";
 import { ImageInputZone } from "./ImageInputZone";
+import { LotteryImageOcrZone } from "./LotteryImageOcrZone";
 
 type Props = {
   round: BetRound;
@@ -51,6 +52,15 @@ export function RoundEditor({ round, result, onChange, onError }: Props) {
         </div>
 
         <div className="space-y-3 rounded-xl bg-white p-3 shadow-sm sm:p-4">
+          <LotteryImageOcrZone
+            key={round.id}
+            imageDataUrl={round.resultImageDataUrl}
+            cropDataUrl={round.resultCropDataUrl}
+            cropRect={round.resultCropRect}
+            onImageChange={(resultImageDataUrl, resultCropDataUrl, resultCropRect) => update({ resultImageDataUrl, resultCropDataUrl, resultCropRect })}
+            onTextRecognized={(resultText) => update({ resultText })}
+            onError={onError}
+          />
           <label className="block space-y-2">
             <span className="text-sm font-semibold text-slate-700">Kết quả xổ số</span>
             <textarea className={textareaClass} value={round.resultText} onChange={(event) => update({ resultText: event.target.value })} />
